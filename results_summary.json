@@ -1,0 +1,23 @@
+{
+  "baseline": {
+    "threshold": 0.5,
+    "fraud_caught": 62,
+    "fraud_missed": 36,
+    "false_alarms": 13,
+    "total_cost": 18325
+  },
+  "balanced": {
+    "threshold": 0.5,
+    "fraud_caught": 90,
+    "fraud_missed": 8,
+    "false_alarms": 1386,
+    "total_cost": 38650
+  },
+  "optimized": {
+    "threshold": 0.97,
+    "fraud_caught": 87,
+    "fraud_missed": 11,
+    "false_alarms": 95,
+    "total_cost": 7875
+  }
+}
