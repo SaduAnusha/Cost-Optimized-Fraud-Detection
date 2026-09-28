@@ -1,23 +1,71 @@
 {
   "baseline": {
+    "model_type": "Logistic Regression (no class weights)",
     "threshold": 0.5,
-    "fraud_caught": 62,
-    "fraud_missed": 36,
-    "false_alarms": 13,
-    "total_cost": 18325
+    "total_cost": 18325,
+    "cost_breakdown": {
+      "FP_cost": 1850,
+      "FN_cost": 5500
+    },
+    "metrics": {
+      "accuracy": 0.9991,
+      "precision": 0.8267,
+      "recall": 0.6327,
+      "f1_score": 0.7168,
+      "fraud_caught": 62,
+      "fraud_missed": 36,
+      "false_alarms": 13,
+      "legitimate_blocked": 13,
+      "legitimate_allowed": 56851
+    }
   },
   "balanced": {
-    "threshold": 0.5,
-    "fraud_caught": 90,
-    "fraud_missed": 8,
-    "false_alarms": 1386,
-    "total_cost": 38650
+    "model_type": "Logistic Regression (class_weight=balanced)",
+    "threshold": 0.97,
+    "total_cost": 7875,
+    "metrics": {
+      "accuracy": 0.9981,
+      "precision": 0.478,
+      "recall": 0.8878,
+      "f1_score": 0.6214,
+      "fraud_caught": 87,
+      "fraud_missed": 11,
+      "false_alarms": 95,
+      "legitimate_blocked": 95,
+      "legitimate_allowed": 56769
+    }
   },
   "optimized": {
-    "threshold": 0.97,
-    "fraud_caught": 87,
-    "fraud_missed": 11,
-    "false_alarms": 95,
-    "total_cost": 7875
+    "model_type": "Logistic Regression (cost-optimized threshold)",
+    "threshold": 0.02,
+    "total_cost": 7350,
+    "cost_breakdown": {
+      "FP_cost": 1850,
+      "FN_cost": 5500
+    },
+    "metrics": {
+      "accuracy": 0.9985,
+      "precision": 0.5404,
+      "recall": 0.8878,
+      "f1_score": 0.6718,
+      "fraud_caught": 87,
+      "fraud_missed": 11,
+      "false_alarms": 74,
+      "legitimate_blocked": 74,
+      "legitimate_allowed": 56790
+    }
+  },
+  "cost_matrix": {
+    "false_positive_cost": 25,
+    "false_negative_cost": 500
+  },
+  "savings": {
+    "dollar_amount": 10975,
+    "percentage": 59.9
+  },
+  "dataset": {
+    "total_transactions": 284807,
+    "fraud_cases": 492,
+    "fraud_rate": 0.17
   }
 }
