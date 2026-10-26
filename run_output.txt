@@ -1,0 +1,75 @@
+======================================================================
+STEP 1: Loading and exploring dataset...
+======================================================================
+✓ Dataset loaded: 284,807 transactions, 31 features
+✓ Fraud rate: 0.17%
+✓ Legitimate: 284,315 | Fraud: 492
+
+======================================================================
+STEP 2: Preprocessing...
+======================================================================
+✓ Train set: 227,845 samples
+✓ Test set: 56,962 samples
+✓ Features standardized using StandardScaler
+
+======================================================================
+STEP 3: Training three Logistic Regression models...
+======================================================================
+
+[Model 1] Baseline Logistic Regression (threshold 0.5)
+  - TP: 62, FN: 36, FP: 13, TN: 56851
+  - Total Cost: $18,325
+
+[Model 2] Balanced Logistic Regression (class_weight='balanced')
+  - Best Threshold: 0.97
+  - TP: 87, FN: 11, FP: 95, TN: 56769
+  - Total Cost: $7,875
+
+[Model 3] Cost-Optimized Logistic Regression (optimal threshold)
+  - Best Threshold: 0.02
+  - TP: 87, FN: 11, FP: 74, TN: 56790
+  - Total Cost: $7,350
+
+======================================================================
+STEP 4: Model Comparison
+======================================================================
+
+✓ Baseline Cost: $18,325
+✓ Optimized Cost: $7,350
+✓ COST SAVINGS: $10,975 (59.9%)
+
+======================================================================
+STEP 5: Generating results summary...
+======================================================================
+✓ Results saved to results_summary.json
+
+======================================================================
+STEP 6: Generating visualizations...
+======================================================================
+
+[Viz 1] Cost vs Threshold curve...
+  ✓ Saved: cost_vs_threshold.png
+
+[Viz 2] ROC curve comparison...
+  ✓ Saved: roc_comparison.png
+
+[Viz 3] Sensitivity analysis heatmap...
+  ✓ Saved: sensitivity_heatmap.png
+
+======================================================================
+EXECUTION COMPLETE ✓
+======================================================================
+
+📊 Key Results:
+   • Baseline Cost: $18,325
+   • Optimized Cost: $7,350
+   • Cost Reduction: 59.9% ($10,975)
+   • Optimal Threshold: 0.02
+
+📁 Output Files Generated:
+   ✓ results_summary.json (results & metrics)
+   ✓ cost_vs_threshold.png
+   ✓ roc_comparison.png
+   ✓ sensitivity_heatmap.png
+
+======================================================================
